@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Idul Fitri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🌙Selamat Idul Fitri🌙</h1>
+        <p>Mohon Maaf Lahir dan Batin🙏</p>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang</a>
+            <a href="contact.html">Programmer</a>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2 align="center">⭐Selamat Datang di Website Idul Fitri⭐</h2>
+            <br align="center">Selamat datang di website ini yang digunakan untuk merayakan Idul Fitri. Di sini, Anda dapat menemukan berbagai informasi dan kegiatan yang berkaitan dengan perayaan Idul Fitri.
+Idul Fitri adalah waktu untuk berkumpul dengan keluarga, berbagi kebahagiaan, dan mempererat tali silaturahmi. Mari kita rayakan momen spesial ini dengan penuh suka cita!</br>
+        </section>
+        <section class="activities">
+            <h2>Kegiatan Menarik🕌</h2>
+            <ul>
+                <li><strong>Shalat Idul Fitri:</strong> Bergabunglah dalam shalat Idul Fitri di masjid terdekat.</li>
+                <li><strong>Berbagi Zakat:</strong> Tunaikan zakat fitrah untuk membantu sesama.</li>
+                <li><strong>Silaturahmi:</strong> Kunjungi keluarga dan teman untuk saling bermaaf-maafan.</li>
+                <li><strong>Acara Keluarga:</strong> Rayakan dengan acara makan bersama keluarga.</li>
+            </ul>
+        </section>
+        <section class="greetings">
+            <h2>Ucapkan Selamat!🎉</h2>
+            <form id="contactForm" method="post" action="Ucapkan selamat.php">
+                <label for="name">Nama Anda:</label>
+                <input type="text" id="name" name="name"> <br>
+
+                <label for="Ucapan">Pesan Ucapan:</label>
+                <br><textarea cols="60" rows="10" id="Ucapan" name="Ucapan"></textarea> <br>
+                
+                <button type="submit">Kirim</button>
+                <button type="reset">Hapus</button>
+            </form>
+            <p id="confirmationMessage" style="display:none; color: green;">Pesan Anda telah berhasil dikirim!⭐ </p>
+        </section>
+    </main>
+    <footer style="padding: 10px;">
+        <p>&copy; 2025 Selamat Idul Fitri. Semua hak dilindungi.</p>
+    </footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir secara default
+    
+            // Ambil nilai dari input
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('Ucapan').value;
+    
+            // Validasi input
+            if (name.trim() === "" || message.trim() === "") {
+                alert("Harap isi semua kolom sebelum mengirim.");
+                return;
+            }
+    
+            // Tampilkan pesan konfirmasi
+            document.getElementById('confirmationMessage').style.display = 'block';
+    
+            // Reset formulir
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>
